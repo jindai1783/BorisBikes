@@ -21,5 +21,3 @@ class User
  		end
  	end
 end
-
-# station = Station.new
