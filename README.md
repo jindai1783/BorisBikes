@@ -10,3 +10,8 @@ Classes
 * Van
 * Garage
 * Station
+
+Methods
+------------
+* Bike: broken
+* User: breaks, rents, returns
