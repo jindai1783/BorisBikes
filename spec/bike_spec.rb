@@ -29,11 +29,24 @@ describe "Testing stations" do
 		expect(station.can_return?).to eq false
 	end
 
-	it "It should not accept returning bikes" do
-		station.max_capacity = 55
+	it "It should accept returning bikes" do
+		station.nr_of_bikes = 35
 		expect(station.can_return?).to eq true
 	end
 
+end
+
+describe "Testing users" do
+	let(:user) {User.new}
+	let(:station) {Station.new}
+
+	it "Should be able to rent bike" do
+		nr_bikes = station.nr_of_bikes
+		nr_bikes -= 1
+		
+		user.rent(station)
+		expect(station.nr_of_bikes).to eq nr_bikes
+	end
 end
 
 

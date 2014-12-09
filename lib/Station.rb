@@ -25,4 +25,8 @@ class Station
 		end
 	end	
 
+	def rent_bike
+		@nr_of_bikes -= 1
+	end
+
 end
