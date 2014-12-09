@@ -14,13 +14,6 @@ class Bikes
 		@broken
 	end
 
-	def fix!
-		if (@broken == false)
-			puts 'It is not broken, no need to fix'
-		end
-		@broken = false
-	end
-
 	def is_rented?
 
 	end

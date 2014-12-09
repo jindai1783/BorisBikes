@@ -1,8 +1,8 @@
-require './Station.rb'
-require './Bikes.rb'
-require './User.rb'
-require './Van.rb'
-require './Garage.rb'
+require 'station'
+require 'bikes'
+require 'user'
+require 'van'
+require 'garage'
 
 bike = Bikes.new
 user = User.new
