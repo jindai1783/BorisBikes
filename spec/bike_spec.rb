@@ -25,14 +25,14 @@ describe "Testing stations" do
 
 	let(:station) {Station.new}
 
-	it "It should not accept returning bikes" do
-		expect(station.can_return?).to eq false
-	end
+	# it "It should not accept returning bikes" do
+	# 	expect(station.can_return?).to eq false
+	# end
 
-	it "It should accept returning bikes" do
-		station.nr_of_bikes = 35
-		expect(station.can_return?).to eq true
-	end
+	# it "It should accept returning bikes" do
+	# 	station.update_stock(35)
+	# 	expect(station.can_return?).to eq true
+	# end
 
 end
 
@@ -40,16 +40,29 @@ describe "Testing users" do
 	let(:user) {User.new}
 	let(:station) {Station.new}
 
-	it "Should be able to rent bike" do
-		nr_bikes = station.nr_of_bikes
-		nr_bikes -= 1
-		
-		user.rent(station)
-		expect(station.nr_of_bikes).to eq nr_bikes
+
+	it "The user do not start with a bike" do
+		expect(user.has_bike).to eq false
 	end
 
+
+
+	it "Should be able to rent bike" do
+		user.rent(station)
+		expect(user.has_bike).to eq true
+	end
+
+
+	# it "Should be able to rent bike" do
+	# 	nr_bikes = station.nr_of_bikes
+	# 	nr_bikes -= 1
+		
+	# 	user.rent(station)
+	# 	expect(station.nr_of_bikes).to eq nr_bikes
+	# end
+
 	it "Should be able to return bike" do
-		station.nr_of_bikes = 20
+		station.update_stock(20)
 		
 		nr_bikes = station.nr_of_bikes
 		nr_bikes += 1
