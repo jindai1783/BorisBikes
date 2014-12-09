@@ -1,12 +1,11 @@
 
 class Station
-	attr_accessor :max_capacity
-	attr_accessor :nr_of_bikes
+	# attr_accessor :max_capacity
+	# attr_accessor :nr_of_bikes
 
 	def initialize
 		@max_capacity = 50
 		@nr_of_bikes = 50
-
 	end
 
 	def can_return?
@@ -27,6 +26,10 @@ class Station
 
 	def rent_bike
 		@nr_of_bikes -= 1
+	end
+
+	def return_bike
+		@nr_of_bikes += 1
 	end
 
 end

@@ -11,7 +11,12 @@ class User
  		# puts station.nr_of_bikes
  	end
 
- 	def return(bike)
+ 	def return(station)
+ 		if station.can_return?
+ 			station.return_bike
+ 		else
+ 			puts "Can't return bike! Station is full!"
+ 		end
  	end
 end
 

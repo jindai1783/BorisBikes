@@ -47,6 +47,17 @@ describe "Testing users" do
 		user.rent(station)
 		expect(station.nr_of_bikes).to eq nr_bikes
 	end
+
+	it "Should be able to return bike" do
+		station.nr_of_bikes = 20
+		
+		nr_bikes = station.nr_of_bikes
+		nr_bikes += 1
+
+		user.return(station)
+		expect(station.nr_of_bikes).to eq nr_bikes
+	end
+
 end
 
 
