@@ -1,6 +1,7 @@
 require './Station.rb'
 
 class Bikes
+
 	def initialize
 		@broken = false
 	end
