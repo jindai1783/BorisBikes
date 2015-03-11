@@ -1,5 +1,3 @@
-
-
 class Bikes
 
 	def initialize
